@@ -1,0 +1,19 @@
+<div id="events">
+    <h1>Notes</h1>
+    <table>
+        <thead>
+        <tr>
+            <th id="timeColumn">Timestamp</th>
+            <th id="eventColumn">Event</th>
+        </tr>
+        </thead>
+        <tbody id="eventTable"
+               ng-repeat="note in vm.notes"
+        >
+        <tr>
+            <td><a href="" ng-click="vm.onNoteClick({time: note.time})">{{note.time | formatTime}}</a></td>
+            <td>{{note.note}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

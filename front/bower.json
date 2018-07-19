@@ -1,0 +1,8 @@
+{
+  "name": "front",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.6.x",
+    "ng-youtube-embed": "1.7.14"
+  }
+}

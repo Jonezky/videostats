@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Stats from a video"/>
+    <title>Video note tool</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <!--<script src="../../actions.js" type="text/javascript"></script> -->
+    <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
+    <script src="components/videoplayer/videoplayer-component.js"></script>
+    <script src="components/videoplayer/videoplayer-controller.js"></script>
+    <script src="components/notelist/notelist-component.js"></script>
+    <script src="components/notelist/notelist-controller.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="services/utils.js"></script>
+    <script src="filters/format-time-filter.js"></script>
+</head>
+
+<body ng-app="videoStats" ng-controller="appController">
+<h1>Video note tool</h1>
+<p><b>Press space to pause and any other key to enter a note.</b></p>
+<div class="left">
+    <h1>Video</h1>
+    <input ng-model="newVideoId" type="text"/>
+    <button ng-click="loadVideo()">Load video</button>
+    <video-player
+            video-id="videoId"
+            on-add-note="addNote(note, time)"
+            jump-to-time="jumpToTime"
+    >
+    </video-player>
+</div>
+<div class="right">
+    <note-list notes="notes" on-note-click="noteClicked(time)"></note-list>
+</div>
+</body>
+
+</html>

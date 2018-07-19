@@ -1,0 +1,12 @@
+{
+  "name": "videostats",
+  "version": "0.0.1",
+  "dependencies": {
+    "bower": "^1.8.4",
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "http-server ./app -a localhost -p 8000 -c-1"
+  }
+}
