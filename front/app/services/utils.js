@@ -17,6 +17,11 @@ function utils(){
         return minutes.toString() + "." + seconds;
     }
 
+    /**
+     * Parses a clean youtube video id from different kinds of youtube link types
+     * @param url youtube video id, video url or embed code snippet
+     * @returns {*|string} youtube video id
+     */
     function parseVideoId(url){
         var ID = '';
         url = url.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);

@@ -35,6 +35,10 @@ function videoPlayerController($window, $document, utils) {
         }
     }
 
+    /**
+     * Add youtube player
+     * @type {ActiveX.IXMLDOMElement | HTMLScriptElement | HTMLElement}
+     */
     var tag = $document[0].createElement('script');
 
     tag.src = "https://www.youtube.com/iframe_api";
@@ -57,9 +61,8 @@ function videoPlayerController($window, $document, utils) {
     }
 
     function onPlayerReady() {
-        console.log("ready!");
-
         //handle keypresses and do corresponding actions
+        //TODO: new note entry on keypresses other than spacebar
         $window.addEventListener("keypress", function (e) {
             if (e.which == 32) {
                 if (vm.player.getPlayerState() === 1) {
